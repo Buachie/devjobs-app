@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: #f2f5f7;
+}
+
+.navbar {
+  width: 100%;
+  padding: 0.5em;
+  background-image: url("../assets//mobile//bg-pattern-header.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-bottom-left-radius: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    background-image: url("../assets/tablet/bg-pattern-header.svg");
+    padding: 2em;
+    border-bottom-left-radius: 100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .navbar {
+    background-image: url("../assets//desktop/bg-pattern-header.svg");
+    padding: 3em;
+  }
+}
+
+.navbar .nav-content {
+  max-width: 1440px;
+  width: 95%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.switch input:checked + .slider::before {
+  -webkit-transform: translateX(26px);
+          transform: translateX(26px);
+}
+
+.switch input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2196f3;
+          box-shadow: 0 0 1px #2196f3;
+}
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch .round {
+  border-radius: 34px;
+}
+
+.switch .round::before {
+  border-radius: 50%;
+}
+/*# sourceMappingURL=main.css.map */
