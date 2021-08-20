@@ -1,14 +1,18 @@
 .searchbar {
   max-width: 1200px;
-  width: 100%;
+  width: 95%;
   background-color: #fff;
-  padding: 1em;
   border-radius: 5px;
-  margin: 0 auto;
+  margin: -2em auto 0;
+  @include med {
+    width: 95%;
+  }
   .input-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 1em;
+    //justify-content: space-between;
     gap: 1em;
     h3 {
       margin: 0;
@@ -22,7 +26,86 @@
 
   .text-input {
     border: none;
-    width: 17em;
+    // width: 17em;
     font-size: 16px;
+  }
+}
+
+.mobile-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .button {
+    background-image: url("../assets/desktop/icon-search.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1em;
+    color: #fff;
+  }
+  @include med {
+    display: none !important;
+  }
+}
+.modal-menu {
+  display: none !important;
+}
+.modal {
+  //display: none;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.514);
+}
+
+.expanded-search {
+  display: none !important;
+  .input-container {
+    width: 32%;
+  }
+  .input-container:nth-child(-n + 2) {
+    border-right: 1px solid $gray;
+  }
+  @include med {
+    display: flex !important;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+  }
+  .fullTime {
+    justify-content: space-between;
+  }
+  .text-input {
+    width: 85%;
+  }
+}
+
+.active {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-container {
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .button {
+    width: 100%;
+  }
+  .input-container {
+    align-items: center;
+    &:first-child {
+      border-bottom: 1px solid $gray;
+    }
   }
 }

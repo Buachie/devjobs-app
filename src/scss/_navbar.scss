@@ -19,12 +19,22 @@
   .nav-content {
     max-width: 1200px;
     width: 95%;
-    margin: 0 auto;
+    margin: 2em auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     color: #fff;
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 2em;
+      font-weight: 700;
+      transition: 0.5s ease;
+      &:hover {
+        color: $gray;
+      }
+    }
   }
 }
 .toggle-container {

@@ -15,7 +15,7 @@ $dark-gray: hsl(214, 17%, 51%);
 }
 
 @mixin lg {
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1200px) {
     @content;
   }
 }
@@ -42,9 +42,10 @@ body {
   margin: 2em auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 3em;
+
   @include med {
     flex-direction: row;
     flex-wrap: wrap;

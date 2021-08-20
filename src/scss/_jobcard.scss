@@ -1,8 +1,14 @@
 .card {
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 1em;
-  width: 350px;
+  width: 100%;
+  @include med {
+    width: 45%;
+  }
+  @include lg {
+    width: 350px;
+  }
 }
 
 .logo-container {
