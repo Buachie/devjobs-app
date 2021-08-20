@@ -5,8 +5,8 @@
 .full-listing {
   width: 100%;
   .listing-header {
-    max-width: 1000px;
-    margin: -50px auto 0 auto;
+    max-width: 720px;
+    margin: 0 auto 0 auto;
     padding: 0.5em;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,10 @@
       padding: 0 2em 0 0;
       flex-direction: row;
       justify-content: space-between;
+      margin: -30px auto 0 auto;
+    }
+    @include lg {
+      margin: -50px auto 0 auto;
     }
     .header-info {
       display: flex;
@@ -41,8 +45,10 @@
       @include med {
         position: relative;
         margin: 0;
-        height: 100px;
+        height: 105px;
         width: 100px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
 
@@ -56,8 +62,8 @@
 }
 
 .listing-body {
-  max-width: 1000px;
-  min-height: calc(100vh - 60px);
+  max-width: 720px;
+  //min-height: calc(100vh - 60px);
   margin: 0 auto;
   background-color: #fff;
   margin-top: 2em;
@@ -110,7 +116,7 @@
   margin: 0 auto;
   background-color: #fff;
   .footer-items {
-    max-width: 1000px;
+    max-width: 720px;
     margin: 2em auto 0 auto;
     display: flex;
     align-items: center;

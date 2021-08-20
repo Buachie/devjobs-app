@@ -1,0 +1,28 @@
+.searchbar {
+  max-width: 1200px;
+  width: 100%;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+  margin: 0 auto;
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    h3 {
+      margin: 0;
+    }
+  }
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text-input {
+    border: none;
+    width: 17em;
+    font-size: 16px;
+  }
+}

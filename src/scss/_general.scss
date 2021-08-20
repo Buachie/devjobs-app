@@ -57,6 +57,10 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: 0.7s ease;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
   &.light {
     background-color: $light-gray;
     color: $violet;

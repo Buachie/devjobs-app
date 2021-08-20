@@ -58,6 +58,11 @@ body {
   font-weight: bold;
   -webkit-transition: 0.7s ease;
   transition: 0.7s ease;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
 }
 
 .button.light {
@@ -271,8 +276,8 @@ body {
 }
 
 .full-listing .listing-header {
-  max-width: 1000px;
-  margin: -50px auto 0 auto;
+  max-width: 720px;
+  margin: 0 auto 0 auto;
   padding: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,6 +307,13 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    margin: -30px auto 0 auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .full-listing .listing-header {
+    margin: -50px auto 0 auto;
   }
 }
 
@@ -349,8 +361,10 @@ body {
   .full-listing .listing-header .header-logo {
     position: relative;
     margin: 0;
-    height: 100px;
+    height: 105px;
     width: 100px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }
 
@@ -365,8 +379,7 @@ body {
 }
 
 .listing-body {
-  max-width: 1000px;
-  min-height: calc(100vh - 60px);
+  max-width: 720px;
   margin: 0 auto;
   background-color: #fff;
   margin-top: 2em;
@@ -457,7 +470,7 @@ body {
 }
 
 .listing-footer .footer-items {
-  max-width: 1000px;
+  max-width: 720px;
   margin: 2em auto 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -498,5 +511,50 @@ body {
     width: -moz-fit-content;
     width: fit-content;
   }
+}
+
+.searchbar {
+  max-width: 1200px;
+  width: 100%;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.searchbar .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+}
+
+.searchbar .input-container h3 {
+  margin: 0;
+}
+
+.searchbar form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.searchbar .text-input {
+  border: none;
+  width: 17em;
+  font-size: 16px;
 }
 /*# sourceMappingURL=main.css.map */
