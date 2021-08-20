@@ -1,0 +1,44 @@
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1em;
+  width: 350px;
+}
+
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -35px;
+}
+
+.job-info {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+  gap: 1em;
+  color: $dark-gray;
+  p,
+  h2 {
+    margin: 0;
+  }
+  h2 {
+    color: #000;
+  }
+}
+.link {
+  font-weight: bold;
+  background: none;
+  border: none;
+  width: fit-content;
+  padding: 0;
+  font-size: 20px;
+  transition: 0.5s ease;
+  &:hover {
+    color: $dark-gray;
+    cursor: pointer;
+  }
+}

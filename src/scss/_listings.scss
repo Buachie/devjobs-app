@@ -1,0 +1,136 @@
+.location {
+  font-weight: 700;
+  color: $violet;
+}
+.full-listing {
+  width: 100%;
+  .listing-header {
+    max-width: 1000px;
+    margin: -50px auto 0 auto;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+    @include med {
+      padding: 0 2em 0 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .header-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include med {
+        flex-direction: row;
+        gap: 1em;
+      }
+    }
+    .header-logo {
+      width: 60px;
+      height: 60px;
+      margin-top: -30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2em 0.5em;
+      border-radius: 5px;
+      @include med {
+        position: relative;
+        margin: 0;
+        height: 100px;
+        width: 100px;
+      }
+    }
+
+    .company-info {
+      text-align: center;
+      @include med {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.listing-body {
+  max-width: 1000px;
+  min-height: calc(100vh - 60px);
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 2em;
+  padding: 0.5em;
+  border-radius: 5px;
+  @include med {
+    padding: 2em;
+  }
+  p {
+    line-height: 25px;
+    color: $dark-gray;
+  }
+  li {
+    padding: 0.5em 0;
+    color: $dark-gray;
+    &::marker {
+      color: $violet;
+    }
+  }
+
+  .job-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+    @include med {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .body-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.5em;
+    }
+    .button {
+      width: 100%;
+      text-align: center;
+      @include med {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+.listing-footer {
+  // margin-top: 3em;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  .footer-items {
+    max-width: 1000px;
+    margin: 2em auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    @include lg {
+      padding: 0;
+    }
+    .footer-info {
+      display: none;
+      @include med {
+        display: block;
+      }
+    }
+    .button {
+      width: 100%;
+      text-align: center;
+      @include med {
+        width: fit-content;
+      }
+    }
+  }
+}

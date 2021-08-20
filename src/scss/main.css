@@ -17,6 +17,67 @@ body {
   background-color: #f2f5f7;
 }
 
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 2em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3em;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+}
+
+.button.light {
+  background-color: #f3f5f7;
+  color: #5762e0;
+}
+
+.button.light:hover {
+  background-color: #c3c7f4;
+}
+
+.button.dark {
+  background-color: #5762e0;
+  color: #fff;
+}
+
+.button.dark:hover {
+  background-color: #949cf4;
+}
+
 .navbar {
   width: 100%;
   padding: 0.5em;
@@ -24,7 +85,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border-bottom-left-radius: 60px;
 }
 
 @media screen and (min-width: 768px) {
@@ -43,7 +103,7 @@ body {
 }
 
 .navbar .nav-content {
-  max-width: 1440px;
+  max-width: 1200px;
   width: 95%;
   margin: 0 auto;
   display: -webkit-box;
@@ -60,6 +120,23 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
+}
+
+.toggle-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5em;
 }
 
 .switch {
@@ -119,5 +196,307 @@ body {
 
 .switch .round::before {
   border-radius: 50%;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1em;
+  width: 350px;
+}
+
+.logo-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -35px;
+}
+
+.job-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2em 0;
+  gap: 1em;
+  color: #6d7f97;
+}
+
+.job-info p,
+.job-info h2 {
+  margin: 0;
+}
+
+.job-info h2 {
+  color: #000;
+}
+
+.link {
+  font-weight: bold;
+  background: none;
+  border: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
+  font-size: 20px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.link:hover {
+  color: #6d7f97;
+  cursor: pointer;
+}
+
+.location {
+  font-weight: 700;
+  color: #5762e0;
+}
+
+.full-listing {
+  width: 100%;
+}
+
+.full-listing .listing-header {
+  max-width: 1000px;
+  margin: -50px auto 0 auto;
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .full-listing .listing-header {
+    padding: 0 2em 0 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.full-listing .listing-header .header-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .full-listing .listing-header .header-info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1em;
+  }
+}
+
+.full-listing .listing-header .header-logo {
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.2em 0.5em;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .full-listing .listing-header .header-logo {
+    position: relative;
+    margin: 0;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.full-listing .listing-header .company-info {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .full-listing .listing-header .company-info {
+    text-align: left;
+  }
+}
+
+.listing-body {
+  max-width: 1000px;
+  min-height: calc(100vh - 60px);
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 2em;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .listing-body {
+    padding: 2em;
+  }
+}
+
+.listing-body p {
+  line-height: 25px;
+  color: #6d7f97;
+}
+
+.listing-body li {
+  padding: 0.5em 0;
+  color: #6d7f97;
+}
+
+.listing-body li::marker {
+  color: #5762e0;
+}
+
+.listing-body .job-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1em;
+}
+
+@media screen and (min-width: 768px) {
+  .listing-body .job-info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.listing-body .job-info .body-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.5em;
+}
+
+.listing-body .job-info .button {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .listing-body .job-info .button {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+.listing-footer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.listing-footer .footer-items {
+  max-width: 1000px;
+  margin: 2em auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em;
+}
+
+@media screen and (min-width: 1440px) {
+  .listing-footer .footer-items {
+    padding: 0;
+  }
+}
+
+.listing-footer .footer-items .footer-info {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .listing-footer .footer-items .footer-info {
+    display: block;
+  }
+}
+
+.listing-footer .footer-items .button {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .listing-footer .footer-items .button {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 /*# sourceMappingURL=main.css.map */

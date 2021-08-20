@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap");
 
+//Colors
+$violet: hsl(235, 69%, 61%);
+$light-violet: hsl(235, 82%, 77%);
+$gray: hsl(212, 23, 69%);
+$light-gray: hsl(210, 22%, 96%);
+$dark-gray: hsl(214, 17%, 51%);
+
+//Media Queries
+@mixin med {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,16 +36,39 @@ body {
   background-color: hsl(210, 23%, 96%);
 }
 
-//Media Queries
-
-@mixin med {
-  @media screen and (min-width: 768px) {
-    @content;
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  @include med {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
-
-@mixin lg {
-  @media screen and (min-width: 1440px) {
-    @content;
+.button {
+  width: fit-content;
+  padding: 1em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.7s ease;
+  &.light {
+    background-color: $light-gray;
+    color: $violet;
+    &:hover {
+      background-color: hsl(235, 68%, 86%);
+    }
+  }
+  &.dark {
+    background-color: $violet;
+    color: #fff;
+    &:hover {
+      background-color: $light-violet;
+    }
   }
 }

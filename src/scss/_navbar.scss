@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border-bottom-left-radius: 60px;
+  // border-bottom-left-radius: 60px;
   @include med {
     background-image: url("../assets/tablet/bg-pattern-header.svg");
     padding: 2em;
@@ -17,7 +17,7 @@
   }
 
   .nav-content {
-    max-width: 1440px;
+    max-width: 1200px;
     width: 95%;
     margin: 0 auto;
     display: flex;
@@ -26,6 +26,13 @@
     align-items: center;
     color: #fff;
   }
+}
+.toggle-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
 }
 
 //The switch - the box around the slider
