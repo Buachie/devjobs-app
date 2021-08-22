@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import { withRouter } from "react-router";
+import { useTheme } from "../contexts/ThemeContext";
+
 const JobCard = ({ job, id, history }) => {
   const handleClick = () => {
     history.push(`/job/${job.id}`, {
@@ -8,8 +9,10 @@ const JobCard = ({ job, id, history }) => {
     });
   };
 
+  const { darkMode } = useTheme();
+
   return (
-    <div className="card">
+    <div className={`card ${darkMode ? "dark" : "light"}`}>
       <div
         className="logo-container"
         style={{ backgroundColor: `${job.logoBackground}` }}

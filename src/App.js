@@ -1,13 +1,15 @@
 import Navbar from "./components/Navbar";
-import { SearchProvider } from "./contexts/SearchContext";
+import { useTheme } from "./contexts/ThemeContext";
 import "./scss/main.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import JobListing from "./components/JobListing";
 
 const App = () => {
+  const { darkMode } = useTheme();
+
   return (
-    <SearchProvider>
+    <div className={`App ${darkMode ? "dark" : "light"}`}>
       <Router>
         <Navbar />
         <Switch>
@@ -15,7 +17,7 @@ const App = () => {
           <Route path="/job/:id" component={JobListing} />
         </Switch>
       </Router>
-    </SearchProvider>
+    </div>
   );
 };
 

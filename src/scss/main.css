@@ -11,9 +11,25 @@ body {
 
 body {
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: "Kumbh Sans", sans-serif;
+}
+
+.App {
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+  padding-bottom: 3em;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.App.dark {
+  background-color: #121721;
+}
+
+.App.light {
   background-color: #f2f5f7;
 }
 
@@ -90,6 +106,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  z-index: 3;
 }
 
 @media screen and (min-width: 768px) {
@@ -217,10 +234,25 @@ body {
 }
 
 .card {
-  background-color: #fff;
   border-radius: 5px;
   padding: 1em;
   width: 100%;
+}
+
+.card.dark {
+  background-color: #19212e;
+}
+
+.card.dark .job-info .link {
+  color: #fff;
+}
+
+.card.dark .job-info .link:hover {
+  color: #6d7f97;
+}
+
+.card.light {
+  background-color: #fff;
 }
 
 @media screen and (min-width: 768px) {
@@ -311,7 +343,8 @@ body {
 
 .full-listing .listing-header {
   max-width: 720px;
-  margin: 0 auto 0 auto;
+  width: 95%;
+  margin: -20px auto 0 auto;
   padding: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -329,6 +362,20 @@ body {
           justify-content: center;
   background-color: #fff;
   border-radius: 5px;
+}
+
+.full-listing .listing-header.dark {
+  background-color: #19212e;
+  color: #fff;
+}
+
+.full-listing .listing-header.dark .light {
+  background-color: #2f3541;
+  color: #fff;
+}
+
+.full-listing .listing-header.dark .light:hover {
+  background-color: #6d7f97;
 }
 
 @media screen and (min-width: 768px) {
@@ -414,11 +461,35 @@ body {
 
 .listing-body {
   max-width: 720px;
+  width: 95%;
   margin: 0 auto;
   background-color: #fff;
   margin-top: 2em;
   padding: 0.5em;
   border-radius: 5px;
+}
+
+.listing-body.dark {
+  background-color: #19212e;
+}
+
+.listing-body.dark h2,
+.listing-body.dark h3 {
+  color: #fff;
+}
+
+.listing-body.dark p,
+.listing-body.dark li {
+  color: #9eafc2;
+}
+
+.listing-body.light p {
+  line-height: 25px;
+  color: #6d7f97;
+}
+
+.listing-body.light li {
+  color: #6d7f97;
 }
 
 @media screen and (min-width: 768px) {
@@ -427,14 +498,8 @@ body {
   }
 }
 
-.listing-body p {
-  line-height: 25px;
-  color: #6d7f97;
-}
-
 .listing-body li {
   padding: 0.5em 0;
-  color: #6d7f97;
 }
 
 .listing-body li::marker {
@@ -500,7 +565,16 @@ body {
 .listing-footer {
   width: 100%;
   margin: 0 auto;
+}
+
+.listing-footer.dark {
+  background-color: #19212e;
+  color: #fff;
+}
+
+.listing-footer.light {
   background-color: #fff;
+  color: #000;
 }
 
 .listing-footer .footer-items {
@@ -550,9 +624,24 @@ body {
 .searchbar {
   max-width: 1200px;
   width: 95%;
-  background-color: #fff;
   border-radius: 5px;
   margin: -2em auto 0;
+}
+
+.searchbar.dark {
+  background-color: #19212e;
+}
+
+.searchbar.dark .text-input {
+  color: #fff;
+}
+
+.searchbar.dark .text-input:focus {
+  background-color: #19212e;
+}
+
+.searchbar.light {
+  background-color: #fff;
 }
 
 @media screen and (min-width: 768px) {
@@ -593,6 +682,7 @@ body {
 }
 
 .searchbar .text-input {
+  outline: none;
   border: none;
   background-color: transparent;
   font-size: 16px;
@@ -622,7 +712,7 @@ body {
 
 .mobile-search .text-input:focus-within {
   background-color: #fff;
-  border: none;
+  outline: none;
 }
 
 .mobile-search .filters {
@@ -703,8 +793,11 @@ body {
 }
 
 .modal-container {
-  width: 100%;
-  background: #fff;
+  width: 95%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
   border-radius: 5px;
   z-index: 4;
   display: -webkit-box;
@@ -717,6 +810,16 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.modal-container.dark {
+  background-color: #19212e;
+  color: #fff;
+}
+
+.modal-container.light {
+  background-color: #fff;
+  color: #000;
 }
 
 .modal-container .button {
@@ -746,12 +849,25 @@ body {
 
 .modal {
   position: fixed;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.514);
+  background-color: rgba(0, 0, 0, 0.329);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .active {
@@ -765,5 +881,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=main.css.map */

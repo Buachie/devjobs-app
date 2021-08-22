@@ -5,6 +5,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  z-index: 3;
   // border-bottom-left-radius: 60px;
   @include med {
     background-image: url("../assets/tablet/bg-pattern-header.svg");

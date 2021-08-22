@@ -1,24 +1,26 @@
 import React, { useState, useRef } from "react";
 import { useSearch } from "../contexts/SearchContext";
+import { useTheme } from "../contexts/ThemeContext";
 import SearchIcon from "../assets/desktop/icon-search.svg";
 import WhiteSearchIcon from "../assets/desktop/search-white.svg";
 import LocationIcon from "../assets/desktop/icon-location.svg";
 import FilterIcon from "../assets/mobile/icon-filter.svg";
 
 const SearchBar = () => {
-  const searchRef = useRef();
-  const locationRef = useRef();
-  const fullTimeRef = useRef();
-  const searchMobileRef = useRef();
-  const locationMobileRef = useRef();
-  const fullTimeMobileRef = useRef();
+  const searchRef = useRef(null);
+  const locationRef = useRef(null);
+  const fullTimeRef = useRef(null);
+  const searchMobileRef = useRef(null);
+  const locationMobileRef = useRef(null);
+  const fullTimeMobileRef = useRef(null);
   const { setFilters } = useSearch();
+  const { darkMode } = useTheme();
   const [modal, setModal] = useState(false);
   const [isChecked, setIsChecked] = useState(true);
 
   const handleCheck = () => {
     setIsChecked(!isChecked);
-    console.log(isChecked);
+    //console.log(isChecked);
   };
 
   const handleSubmit = async (e) => {
@@ -83,7 +85,7 @@ const SearchBar = () => {
       onSubmit={handleSubmit}
     >
       <div className="modal" onClick={() => setModal(false)}></div>
-      <div className="modal-container">
+      <div className={`modal-container ${darkMode ? "dark" : "light"}`}>
         <div className="input-container location">
           <img src={LocationIcon} alt="location-icon" />
           <input
@@ -115,7 +117,7 @@ const SearchBar = () => {
   );
 
   return (
-    <div className="searchbar">
+    <div className={`searchbar ${darkMode ? "dark" : "light"}`}>
       <form className="expanded-search" onSubmit={handleSubmit}>
         <div className="input-container">
           <img src={SearchIcon} alt="search-icon" />

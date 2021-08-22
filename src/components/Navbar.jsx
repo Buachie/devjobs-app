@@ -2,8 +2,11 @@ import React from "react";
 import SunIcon from "../assets/desktop/icon-sun.svg";
 import MoonIcon from "../assets/desktop/icon-moon.svg";
 import { Link } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext";
 
 const Navbar = () => {
+  const { toggleDarkMode } = useTheme();
+
   return (
     <div>
       <div className="navbar">
@@ -14,7 +17,7 @@ const Navbar = () => {
             <div className="toggle">
               <label className="switch">
                 <input type="checkbox"></input>
-                <span className="slider round"></span>
+                <span className="slider round" onClick={toggleDarkMode}></span>
               </label>
             </div>
             <img src={MoonIcon} alt="" />

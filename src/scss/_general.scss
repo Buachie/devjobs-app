@@ -6,6 +6,10 @@ $light-violet: hsl(235, 82%, 77%);
 $gray: hsl(212, 23, 69%);
 $light-gray: hsl(210, 22%, 96%);
 $dark-gray: hsl(214, 17%, 51%);
+$dark-background: hsl(219, 29%, 10%);
+$dark-card: hsl(219, 29%, 14%);
+$light-background: hsl(210, 23%, 96%);
+$dark-button: hsl(220, 16%, 22%);
 
 //Media Queries
 @mixin med {
@@ -30,10 +34,22 @@ body {
 }
 body {
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: "Kumbh Sans", sans-serif;
-  background-color: hsl(210, 23%, 96%);
+}
+.App {
+  transition: 0.7s ease;
+  padding-bottom: 3em;
+  min-height: 100vh;
+  width: 100%;
+  &.dark {
+    background-color: $dark-background;
+  }
+  &.light {
+    background-color: $light-background;
+  }
 }
 
 .container {

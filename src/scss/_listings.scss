@@ -6,7 +6,8 @@
   width: 100%;
   .listing-header {
     max-width: 720px;
-    margin: 0 auto 0 auto;
+    width: 95%;
+    margin: -20px auto 0 auto;
     padding: 0.5em;
     display: flex;
     flex-direction: column;
@@ -15,6 +16,18 @@
     justify-content: center;
     background-color: #fff;
     border-radius: 5px;
+
+    &.dark {
+      background-color: $dark-card;
+      color: #fff;
+      .light {
+        background-color: $dark-button;
+        color: #fff;
+        &:hover {
+          background-color: $dark-gray;
+        }
+      }
+    }
     @include med {
       padding: 0 2em 0 0;
       flex-direction: row;
@@ -63,22 +76,40 @@
 
 .listing-body {
   max-width: 720px;
+  width: 95%;
   //min-height: calc(100vh - 60px);
   margin: 0 auto;
   background-color: #fff;
   margin-top: 2em;
   padding: 0.5em;
   border-radius: 5px;
+  &.dark {
+    background-color: $dark-card;
+    h2,
+    h3 {
+      color: #fff;
+    }
+    p,
+    li {
+      color: $gray;
+    }
+  }
+  &.light {
+    p {
+      line-height: 25px;
+      color: $dark-gray;
+    }
+    li {
+      color: $dark-gray;
+    }
+  }
+
   @include med {
     padding: 2em;
   }
-  p {
-    line-height: 25px;
-    color: $dark-gray;
-  }
+
   li {
     padding: 0.5em 0;
-    color: $dark-gray;
     &::marker {
       color: $violet;
     }
@@ -114,7 +145,14 @@
   // margin-top: 3em;
   width: 100%;
   margin: 0 auto;
-  background-color: #fff;
+  &.dark {
+    background-color: $dark-card;
+    color: #fff;
+  }
+  &.light {
+    background-color: #fff;
+    color: #000;
+  }
   .footer-items {
     max-width: 720px;
     margin: 2em auto 0 auto;

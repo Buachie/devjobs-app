@@ -2,14 +2,11 @@ import React, { useState, useEffect } from "react";
 import data from "../data/data.json";
 import JobCard from "../components/JobCard";
 import SearchBar from "../components/SearchBar";
-import { useParams } from "react-router-dom";
 import { useSearch } from "../contexts/SearchContext";
 
 const Home = () => {
   const { title, location, fullTime } = useSearch();
   const [jobs, setJobs] = useState([]);
-
-  let params = useParams();
 
   const stringComparator = (data, key, value) => {
     return data.filter(
@@ -19,7 +16,7 @@ const Home = () => {
   };
   useEffect(() => {
     setJobs(data);
-    console.log(jobs);
+    //console.log(jobs);
   }, [jobs]);
 
   const filteredJobs = (jobs) => {
@@ -44,7 +41,7 @@ const Home = () => {
     return jobs;
   };
 
-  console.log(filteredJobs(jobs));
+  //console.log(filteredJobs(jobs));
   return (
     <div className="container-lg">
       <SearchBar />

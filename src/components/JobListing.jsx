@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 const JobListing = ({
   location: {
@@ -21,10 +22,11 @@ const JobListing = ({
     },
   },
 }) => {
+  const { darkMode } = useTheme();
   return (
     <div className="container-lg">
       <div className="full-listing">
-        <div className="listing-header">
+        <div className={`listing-header ${darkMode ? "dark" : "light"}`}>
           <div className="header-info">
             <div
               className="header-logo"
@@ -42,7 +44,7 @@ const JobListing = ({
             Company Website
           </a>
         </div>
-        <div className="listing-body">
+        <div className={`listing-body ${darkMode ? "dark" : "light"}`}>
           <div className="job-info">
             <div className="body-header">
               <p className="time-contract">
@@ -59,20 +61,20 @@ const JobListing = ({
           <h3>Requirements</h3>
           <p>{requirements.content}</p>
           <ul>
-            {requirements.items.map((item) => (
-              <li>{item}</li>
+            {requirements.items.map((item, i) => (
+              <li key={i}>{item}</li>
             ))}
           </ul>
           <h3>What You Will Do</h3>
           <p>{role.content}</p>
           <ol>
-            {role.items.map((item) => (
-              <li>{item}</li>
+            {role.items.map((item, i) => (
+              <li key={i}>{item}</li>
             ))}
           </ol>
         </div>
       </div>
-      <div className="listing-footer">
+      <div className={`listing-footer ${darkMode ? "dark" : "light"}`}>
         <div className="footer-items">
           <div className="footer-info">
             <h2>{position}</h2>
