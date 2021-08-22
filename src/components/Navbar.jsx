@@ -8,23 +8,21 @@ const Navbar = () => {
   const { toggleDarkMode } = useTheme();
 
   return (
-    <div>
-      <div className="navbar">
-        <div className="nav-content">
-          <Link to="/">devjobs</Link>
-          <div className="toggle-container">
-            <img src={SunIcon} alt="" />
-            <div className="toggle">
-              <label className="switch">
-                <input type="checkbox"></input>
-                <span className="slider round" onClick={toggleDarkMode}></span>
-              </label>
-            </div>
-            <img src={MoonIcon} alt="" />
+    <nav className="navbar">
+      <div className="nav-content">
+        <Link to="/">devjobs</Link>
+        <div className="toggle-container">
+          <img src={SunIcon} alt="" />
+          <div className="toggle">
+            <label className="switch">
+              <input type="checkbox"></input>
+              <span className="slider round" onClick={toggleDarkMode}></span>
+            </label>
           </div>
+          <img src={MoonIcon} alt="" />
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

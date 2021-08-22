@@ -43,7 +43,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container-lg">
+    <div role="main" className="container-lg">
       <SearchBar />
       <div className="container">
         {filteredJobs(jobs).map((job) => {

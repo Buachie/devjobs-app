@@ -24,7 +24,7 @@ const JobListing = ({
 }) => {
   const { darkMode } = useTheme();
   return (
-    <div className="container-lg">
+    <div role="main" className="container-lg">
       <div className="full-listing">
         <div className={`listing-header ${darkMode ? "dark" : "light"}`}>
           <div className="header-info">
