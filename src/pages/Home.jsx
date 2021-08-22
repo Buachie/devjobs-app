@@ -8,11 +8,10 @@ const Home = () => {
   const { title, location, fullTime } = useSearch();
   const [jobs, setJobs] = useState([]);
 
-  const stringComparator = (data, key, value) => {
+  const stringFilter = (data, key, value) => {
     if (value.length > 0) {
-      return data.filter(
-        (item) => item[key].toLowerCase().includes(value.toLowerCase())
-        //item[key].toLowerCase() === value.toLowerCase()
+      return data.filter((item) =>
+        item[key].toLowerCase().includes(value.toLowerCase())
       );
     } else {
       return null;
@@ -24,8 +23,6 @@ const Home = () => {
   }, [jobs]);
 
   const filteredJobs = (jobs) => {
-    // let jobs = data;
-
     if (title) {
       const convertedTitle = title.toLowerCase();
       jobs = data.filter(
@@ -35,17 +32,16 @@ const Home = () => {
       );
     }
     if (location) {
-      jobs = stringComparator(jobs, "location", location);
+      jobs = stringFilter(jobs, "location", location);
     }
 
     if (fullTime) {
-      jobs = stringComparator(jobs, "contract", fullTime);
+      jobs = stringFilter(jobs, "contract", fullTime);
     }
 
     return jobs;
   };
 
-  //console.log(filteredJobs(jobs));
   return (
     <div className="container-lg">
       <SearchBar />

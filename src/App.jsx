@@ -3,7 +3,7 @@ import { useTheme } from "./contexts/ThemeContext";
 import "./scss/main.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import JobListing from "./components/JobListing";
+import JobListing from "./pages/JobListing";
 
 const App = () => {
   const { darkMode } = useTheme();

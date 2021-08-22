@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }) => {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    console.log(darkMode);
+    //console.log(darkMode);
   };
 
   const value = {
