@@ -249,6 +249,11 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: -35px;
+  padding: 0.2em;
+}
+
+.logo-container img {
+  width: 100%;
 }
 
 .job-info {
@@ -259,6 +264,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 2em 0;
   gap: 1em;
   color: #6d7f97;
@@ -281,6 +289,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   padding: 0;
+  text-align: left;
   font-size: 20px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
@@ -585,10 +594,12 @@ body {
 
 .searchbar .text-input {
   border: none;
+  background-color: transparent;
   font-size: 16px;
 }
 
 .mobile-search {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -601,32 +612,50 @@ body {
           justify-content: space-between;
 }
 
+.mobile-search img {
+  z-index: 3;
+}
+
+.mobile-search .text-input {
+  width: 130%;
+}
+
+.mobile-search .text-input:focus-within {
+  background-color: #fff;
+  border: none;
+}
+
+.mobile-search .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mobile-search .filters .filter-button {
+  background: transparent;
+  border: none;
+}
+
 .mobile-search .button {
   background-image: url("../assets/desktop/icon-search.svg");
   background-position: center;
   background-repeat: no-repeat;
-  padding: 1em;
+  padding: 0.5em;
+  margin-right: 0.5em;
   color: #fff;
+  background: #5762e0;
 }
 
 @media screen and (min-width: 768px) {
   .mobile-search {
     display: none !important;
   }
-}
-
-.modal-menu {
-  display: none !important;
-}
-
-.modal {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.514);
 }
 
 .expanded-search {
@@ -673,23 +702,10 @@ body {
   width: 85%;
 }
 
-.active {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .modal-container {
+  width: 100%;
   background: #fff;
   border-radius: 5px;
-  padding: 1em;
   z-index: 4;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -704,16 +720,50 @@ body {
 }
 
 .modal-container .button {
-  width: 100%;
+  width: 90%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  margin-bottom: 1em;
 }
 
 .modal-container .input-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .modal-container .input-container:first-child {
   border-bottom: 1px solid #9eafc2;
+}
+
+.modal-menu {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.514);
+}
+
+.active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,3 +1,4 @@
+//General Searchbar Styles
 .searchbar {
   max-width: 1200px;
   width: 95%;
@@ -26,40 +27,53 @@
 
   .text-input {
     border: none;
+    background-color: transparent;
     // width: 17em;
     font-size: 16px;
   }
 }
 
+//Mobile Search Bar
 .mobile-search {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  img {
+    z-index: 3;
+  }
+  .text-input {
+    width: 130%;
+    &:focus-within {
+      background-color: #fff;
+      border: none;
+    }
+  }
+  .filters {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-around;
+    .filter-button {
+      background: transparent;
+      border: none;
+    }
+  }
   .button {
     background-image: url("../assets/desktop/icon-search.svg");
     background-position: center;
     background-repeat: no-repeat;
-    padding: 1em;
+    padding: 0.5em;
+    margin-right: 0.5em;
     color: #fff;
+    background: $violet;
   }
   @include med {
     display: none !important;
   }
 }
-.modal-menu {
-  display: none !important;
-}
-.modal {
-  //display: none;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: hsla(0, 0%, 0%, 0.514);
-}
 
+//Large Search Bar
 .expanded-search {
   display: none !important;
   .input-container {
@@ -85,27 +99,45 @@
   }
 }
 
-.active {
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-}
-
+//Mobile Menu Modal
 .modal-container {
+  width: 100%;
   background: #fff;
   border-radius: 5px;
-  padding: 1em;
   z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   .button {
-    width: 100%;
+    width: 90%;
+    align-self: center;
+    justify-self: start;
+    margin-bottom: 1em;
   }
   .input-container {
     align-items: center;
+    width: 100%;
     &:first-child {
       border-bottom: 1px solid $gray;
     }
   }
+}
+
+.modal-menu {
+  display: none !important;
+}
+.modal {
+  //display: none;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.514);
+}
+.active {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
 }
