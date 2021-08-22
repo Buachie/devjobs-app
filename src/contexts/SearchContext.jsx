@@ -19,21 +19,37 @@ export const SearchProvider = ({ children }) => {
     mobileLocationInput,
     mobileFullTimeInput
   ) => {
-    if (queryInput) setTitle(queryInput);
-    if (locationInput) setLocation(locationInput);
+    if (queryInput.length > 0) {
+      setTitle(queryInput);
+    } else {
+      setTitle(null);
+    }
+    if (locationInput) {
+      setLocation(locationInput);
+    } else {
+      setLocation(null);
+    }
     if (fullTimeInput) {
       setFullTime(fullTimeInput);
     } else {
       setFullTime(null);
     }
-    if (mobileQueryInput) setTitle(mobileQueryInput);
-    if (mobileLocationInput) setLocation(mobileLocationInput);
+    if (mobileQueryInput) {
+      setTitle(mobileQueryInput);
+    } else {
+      setTitle(null);
+    }
+    if (mobileLocationInput) {
+      setLocation(mobileLocationInput);
+    } else {
+      setLocation(null);
+    }
     if (mobileFullTimeInput) {
       setFullTime(mobileFullTimeInput);
     } else {
       setFullTime(null);
     }
-    console.log(title, location, fullTime);
+    //console.log(title, location, fullTime);
   };
 
   const value = {

@@ -9,10 +9,14 @@ const Home = () => {
   const [jobs, setJobs] = useState([]);
 
   const stringComparator = (data, key, value) => {
-    return data.filter(
-      (item) => item[key].toLowerCase().includes(value.toLowerCase())
-      //item[key].toLowerCase() === value.toLowerCase()
-    );
+    if (value.length > 0) {
+      return data.filter(
+        (item) => item[key].toLowerCase().includes(value.toLowerCase())
+        //item[key].toLowerCase() === value.toLowerCase()
+      );
+    } else {
+      return null;
+    }
   };
   useEffect(() => {
     setJobs(data);
