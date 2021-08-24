@@ -40,7 +40,7 @@ export const SearchProvider = ({ children }) => {
     } else {
       setFullTime(null);
     }
-    console.log(title, location, fullTime);
+    // console.log(title, location, fullTime);
   };
 
   const value = {

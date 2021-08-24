@@ -15,8 +15,13 @@ const Navbar = () => {
           <img src={SunIcon} alt="" />
           <div className="toggle">
             <label className="switch">
-              <input type="checkbox"></input>
-              <span className="slider round" onClick={toggleDarkMode}></span>
+              <input
+                type="checkbox"
+                name="theme"
+                placeholder="theme"
+                onClick={toggleDarkMode}
+              ></input>
+              <span className="slider round"></span>
             </label>
           </div>
           <img src={MoonIcon} alt="" />

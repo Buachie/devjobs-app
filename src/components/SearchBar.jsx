@@ -102,6 +102,7 @@ const SearchBar = () => {
             type="checkbox"
             name="fulltime"
             id="fulltime-mobile"
+            placeholder="Full Time"
             value="Full Time"
             ref={fullTimeMobileRef}
             checked={isChecked}
@@ -150,6 +151,7 @@ const SearchBar = () => {
               name="fulltime"
               id="fulltime"
               value="Full Time"
+              placeholder="Full Time"
               ref={fullTimeRef}
               checked={isChecked}
               onChange={handleCheck}
