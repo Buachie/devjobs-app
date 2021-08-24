@@ -8,6 +8,7 @@ const Home = () => {
   const { title, location, fullTime } = useSearch();
   const [jobs, setJobs] = useState([]);
 
+  // Filters for the location and contract type
   const stringFilter = (data, key, value) => {
     if (value.length > 0) {
       return data.filter((item) =>

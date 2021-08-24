@@ -21,35 +21,26 @@ export const SearchProvider = ({ children }) => {
   ) => {
     if (queryInput.length > 0) {
       setTitle(queryInput);
+    } else if (mobileQueryInput) {
+      setTitle(mobileQueryInput);
     } else {
       setTitle(null);
     }
     if (locationInput) {
       setLocation(locationInput);
+    } else if (mobileLocationInput) {
+      setLocation(mobileLocationInput);
     } else {
       setLocation(null);
     }
     if (fullTimeInput) {
       setFullTime(fullTimeInput);
-    } else {
-      setFullTime(null);
-    }
-    if (mobileQueryInput) {
-      setTitle(mobileQueryInput);
-    } else {
-      setTitle(null);
-    }
-    if (mobileLocationInput) {
-      setLocation(mobileLocationInput);
-    } else {
-      setLocation(null);
-    }
-    if (mobileFullTimeInput) {
+    } else if (mobileFullTimeInput) {
       setFullTime(mobileFullTimeInput);
     } else {
       setFullTime(null);
     }
-    //console.log(title, location, fullTime);
+    console.log(title, location, fullTime);
   };
 
   const value = {

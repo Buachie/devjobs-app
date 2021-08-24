@@ -16,7 +16,7 @@ const SearchBar = () => {
   const { setFilters } = useSearch();
   const { darkMode } = useTheme();
   const [modal, setModal] = useState(false);
-  const [isChecked, setIsChecked] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleCheck = () => {
     setIsChecked(!isChecked);
@@ -104,6 +104,8 @@ const SearchBar = () => {
             id="fulltime-mobile"
             value="Full Time"
             ref={fullTimeMobileRef}
+            checked={isChecked}
+            onChange={handleCheck}
           />
           <h3>Fulltime Only</h3>
         </div>
@@ -147,7 +149,7 @@ const SearchBar = () => {
               type="checkbox"
               name="fulltime"
               id="fulltime"
-              value={false}
+              value="Full Time"
               ref={fullTimeRef}
               checked={isChecked}
               onChange={handleCheck}
